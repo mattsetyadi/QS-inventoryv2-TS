@@ -30,7 +30,7 @@ const TemplateComponent = ({ children }: any) => {
             <Link to="/suppliers">Supplier</Link>
           </Menu.Item>
           <Menu.Item key="3" icon={<AppstoreOutlined />}>
-            Inventory
+            <Link to="/inventory">Inventory</Link>
           </Menu.Item>
         </Menu>
       </Sider>

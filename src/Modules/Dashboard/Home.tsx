@@ -1,3 +1,4 @@
+import * as ActionInventory from '../Inventory/Store/InventoryAction';
 import * as ActionSupplier from '../Supplier/Store/SupplierAction';
 
 import React, { useEffect } from 'react';
@@ -7,10 +8,11 @@ import { connect } from 'react-redux';
 
 const Home = (props: any) => {
   console.log('Home props goes here >>', props);
-  const { actionSupplier } = props;
+  const { actionSupplier, actionInventory } = props;
 
   useEffect(() => {
     actionSupplier.fetchSupplierListRequested();
+    actionInventory.fetchInventoryListRequested();
     // eslint-disable-next-line
   }, []);
   return (
@@ -22,6 +24,7 @@ const Home = (props: any) => {
 
 const mapDispatchToProps = (dispatch: any) => ({
   actionSupplier: bindActionCreators(ActionSupplier, dispatch),
+  actionInventory: bindActionCreators(ActionInventory, dispatch),
 });
 
 const withConnect = connect(null, mapDispatchToProps);

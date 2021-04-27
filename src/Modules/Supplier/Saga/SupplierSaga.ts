@@ -11,7 +11,7 @@ function* fetchSupplierListProcess() {
       `${process.env.REACT_APP_APP_URL}/Supplier/inquiry/0/1000`
     );
 
-    yield put(ActionSupplier.fetchSupplierListFinished(data));
+    yield put(ActionSupplier.fetchSupplierListFinished(data?.data));
   } catch (error) {
     console.log(error);
   }
